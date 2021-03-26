@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/codingbat-master.iml" filepath="$PROJECT_DIR$/.idea/codingbat-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/codingbat-master/demo.iml" filepath="$PROJECT_DIR$/codingbat-master/demo.iml" />
-    </modules>
-  </component>
-</project>
