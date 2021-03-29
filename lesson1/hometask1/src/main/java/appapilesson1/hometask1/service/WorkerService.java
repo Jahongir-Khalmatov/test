@@ -67,7 +67,7 @@ public Response edit(@PathVariable Integer id,@RequestBody WorkerDto workerDto){
     worker.setDepartment(department);
     Optional<Address> optionalAddress = addressRepository.findById(workerDto.getAddressId());
     if (!optionalAddress.isPresent()){
-        Address address = new Address();
+        Address address = optionalAddress.get();
         address.setStreet(workerDto.getStreet());
         address.setHomeNumber(workerDto.getHomeNumber());
         addressRepository.save(address);

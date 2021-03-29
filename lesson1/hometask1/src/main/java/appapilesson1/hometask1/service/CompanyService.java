@@ -37,7 +37,7 @@ public Response add(@RequestBody CompanyDto companyDto){
     company.setDirectorName(companyDto.getDirectorName());
     Optional<Address> optionalAddress = addressRepository.findById(companyDto.getAddressId());
     if (!optionalAddress.isPresent()){
-        Address address = optionalAddress.get();
+Address address = new Address();
         address.setStreet(companyDto.getStreet());
         address.setHomeNumber(companyDto.getHomeNumber());
         addressRepository.save(address);
