@@ -36,14 +36,12 @@ public boolean validationToken(String token){
     }
     public String getUsernameFromToken(String token) {
 
-        String username = Jwts
+        return Jwts
                 .parser()
                 .setSigningKey(secretKey)
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
-
-        return username;
     }
 
 

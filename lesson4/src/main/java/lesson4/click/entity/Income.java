@@ -16,9 +16,9 @@ public class Income {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
 @ManyToOne
-public Card fromCard;
+public Card sendingCardId;
 @ManyToOne
-public Card toCard;
+public Card receivingCardId;
 public Double amount;
 public Date date;
 }

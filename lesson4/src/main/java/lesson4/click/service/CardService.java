@@ -44,18 +44,19 @@ public class CardService {
         cardRepository.save(card1);
        return ResponseEntity.status(201).body("Added");
     }
-    public HttpEntity<?> edit(Integer id,Card card){
+    public HttpEntity<?> edit(Integer id,Card card,HttpServletRequest request){
         Optional<Card> optionalCard = cardRepository.findById(id);
         if (!optionalCard.isPresent())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Card Id not founded");
         Card card1 = optionalCard.get();
-        card1.setUserName(card.getUserName());
-        card1.setBalance(card.getBalance());
+        String authorization = jwtProvider.getUsernameFromToken(request.getHeader("Authorization"));
+        card1.setUserName(authorization);
+
         card1.setNumber(card.getNumber());
         card1.setExpiredDate(card.getExpiredDate());
-        card1.setActive(card.isActive());
         cardRepository.save(card1);
-        return ResponseEntity.ok().body("Edited");
+        return ResponseEntity.status(201).body("Edited");
+
     }
     public HttpEntity<?> delete(Integer id){
         Optional<Card> optionalCard = cardRepository.findById(id);

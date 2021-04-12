@@ -18,7 +18,7 @@ public class MyAuthService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         List<User> userList=new ArrayList<>(Arrays.asList(
-                new User("Jahon",passwordEncoder.encode("111"),new ArrayList<>()),
+                new User("Jahongir",passwordEncoder.encode("111"),new ArrayList<>()),
                 new User("Sukhrob",passwordEncoder.encode("222"),new ArrayList<>()),
                 new User("Hayot",passwordEncoder.encode("222"),new ArrayList<>())
         ));

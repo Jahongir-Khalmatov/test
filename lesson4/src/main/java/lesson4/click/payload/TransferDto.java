@@ -4,8 +4,6 @@ import lombok.Data;
 
 @Data
 public class TransferDto {
-private Integer id;
-private String  toCardId;
-private String  fromCardId;
+private Integer  toCardId;
 private Double amount;
 }
